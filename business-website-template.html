@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A clean, responsive one-page website template for small businesses.">
+  <title>YOUR BUSINESS NAME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --plum-deep:#241a30;
+      --indigo-rain:#161022;
+      --plum-mid:#3a2a49;
+      --plum-soft:#4a3759;
+      --amber-glow:#e8a854;
+      --amber-soft:#f0c98a;
+      --rose-dusk:#c97b86;
+      --cream-mist:#f4ecdf;
+      --cream-dim:#cfc3b6;
+      --line:rgba(244,236,223,.14);
+      --card:rgba(255,255,255,.045);
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    html,body{margin:0;min-height:100%;font-family:'Manrope',sans-serif;color:var(--cream-mist)}
+    body{
+      background:
+        radial-gradient(ellipse 60% 40% at 10% 5%, rgba(232,168,84,.11), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 90% 60%, rgba(201,123,134,.10), transparent 60%),
+        linear-gradient(180deg,var(--plum-deep),var(--indigo-rain));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),92%);margin:auto}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(14px);
+      background:rgba(22,16,34,.76);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:'Fraunces',serif;font-size:1.25rem;letter-spacing:.01em}
+    .brand span{color:var(--amber-soft)}
+    .navlinks{display:flex;gap:22px;align-items:center;font-size:.92rem;color:var(--cream-dim)}
+    .navlinks a:hover{color:var(--cream-mist)}
+    .navcta{padding:10px 18px;border-radius:999px;background:var(--amber-glow);color:var(--indigo-rain);font-weight:700}
+
+    .hero{padding:110px 0 90px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--amber-soft);font-size:.82rem;text-transform:uppercase;letter-spacing:.16em;margin-bottom:20px}
+    .eyebrow:before{content:"";width:28px;height:1px;background:var(--amber-glow)}
+    h1,h2{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-.02em}
+    h1{font-size:clamp(2.8rem,7vw,5.3rem);line-height:.98;margin:0 0 24px}
+    h1 em{color:var(--amber-soft)}
+    .lede{font-size:1.08rem;line-height:1.75;color:var(--cream-dim);max-width:58ch}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.22s ease}
+    .btn.primary{background:var(--amber-glow);color:var(--indigo-rain);box-shadow:0 14px 35px -18px rgba(232,168,84,.7)}
+    .btn.primary:hover{transform:translateY(-2px)}
+    .btn.secondary{border-color:var(--line);color:var(--cream-mist);background:rgba(255,255,255,.025)}
+    .btn.secondary:hover{background:rgba(255,255,255,.07)}
+
+    .hero-card{padding:28px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border-radius:28px 12px 28px 12px;box-shadow:0 35px 80px -35px rgba(0,0,0,.65)}
+    .hero-card .box-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--cream-dim);margin-bottom:18px}
+    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .stat{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)}
+    .stat strong{display:block;font-size:1.45rem;margin-bottom:5px}
+    .stat span{font-size:.85rem;color:var(--cream-dim)}
+
+    section{padding:80px 0}
+    .section-head{max-width:700px;margin-bottom:40px}
+    .section-head h2{font-size:clamp(2rem,4.6vw,3.3rem);margin:0 0 14px}
+    .section-head p{color:var(--cream-dim);line-height:1.75;margin:0}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:26px;border:1px solid var(--line);background:var(--card);border-radius:24px 10px 24px 10px}
+    .icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(232,168,84,.12);color:var(--amber-soft);font-weight:800;margin-bottom:18px}
+    .card h3{margin:0 0 10px;font-size:1.15rem}
+    .card p{margin:0;color:var(--cream-dim);line-height:1.7;font-size:.94rem}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+    .panel{padding:34px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:28px}
+    .panel h3{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:500;margin:0 0 14px}
+    .panel p{color:var(--cream-dim);line-height:1.75;margin:0}
+    .checks{margin-top:24px;display:grid;gap:12px}
+    .check{display:flex;gap:10px;align-items:flex-start;color:var(--cream-dim);line-height:1.55}
+    .check b{color:var(--amber-soft)}
+
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .price{position:relative;padding:28px;border:1px solid var(--line);background:var(--card);border-radius:24px}
+    .price.featured{border-color:rgba(232,168,84,.55);box-shadow:0 25px 60px -35px rgba(232,168,84,.4)}
+    .badge{position:absolute;right:16px;top:16px;font-size:.72rem;padding:6px 10px;border-radius:999px;background:rgba(232,168,84,.15);color:var(--amber-soft)}
+    .price h3{margin:0 0 10px;font-size:1.1rem}
+    .amount{font-family:'Fraunces',serif;font-size:2.2rem;margin-bottom:16px}
+    .price p{color:var(--cream-dim);font-size:.9rem;line-height:1.65;min-height:72px}
+    .price ul{padding:0;margin:20px 0;list-style:none;display:grid;gap:10px;color:var(--cream-dim);font-size:.9rem}
+    .price li:before{content:'✓';color:var(--amber-soft);font-weight:800;margin-right:9px}
+
+    .contact{display:grid;grid-template-columns:1fr .9fr;gap:30px;align-items:stretch}
+    .contact-card{padding:34px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(232,168,84,.09),rgba(255,255,255,.03));border-radius:28px 10px 28px 10px}
+    .contact-card h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 14px}
+    .contact-card p{color:var(--cream-dim);line-height:1.7}
+    .contact-list{display:grid;gap:14px;margin-top:24px}
+    .contact-item{padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.08)}
+    .contact-item small{display:block;color:var(--cream-dim);margin-bottom:5px}
+    .contact-item strong{font-size:1rem}
+
+    footer{padding:35px 0 50px;border-top:1px solid var(--line);color:var(--cream-dim);font-size:.85rem}
+    .foot{display:flex;justify-content:space-between;gap:16px;align-items:center}
+
+    @media (max-width:850px){
+      .hero-grid,.split,.contact{grid-template-columns:1fr}
+      .cards,.price-grid{grid-template-columns:1fr}
+      .hero{padding-top:75px}
+    }
+    @media (max-width:600px){
+      .navlinks a:not(.navcta){display:none}
+      .hero{padding-bottom:50px}
+      section{padding:60px 0}
+      .stat-grid{grid-template-columns:1fr 1fr}
+      .foot{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <!-- EDIT THESE CONTENT ITEMS FOR EACH CLIENT -->
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top">YOUR <span>BUSINESS</span></a>
+      <nav class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a class="navcta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Quality • Service • Trust</div>
+          <h1>Good work.<br><em>Made simple.</em></h1>
+          <p class="lede">We help customers with reliable, professional solutions and friendly service. Replace this text with a short description of the client's real business.</p>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Get in touch</a>
+            <a class="btn secondary" href="#services">View services</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="box-title">Why customers choose us</div>
+          <div class="stat-grid">
+            <div class="stat"><strong>10+</strong><span>Years of experience</span></div>
+            <div class="stat"><strong>500+</strong><span>Happy customers</span></div>
+            <div class="stat"><strong>Fast</strong><span>Response & support</span></div>
+            <div class="stat"><strong>Local</strong><span>Trusted service</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What we do</h2>
+          <p>Use these cards to show the three most important services or product categories offered by the business.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Service One</h3>
+            <p>Briefly explain the main service, what it includes, and the problem it solves for the customer.</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Service Two</h3>
+            <p>Describe another key service in simple language so visitors immediately understand the value.</p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Service Three</h3>
+            <p>Add a third service, specialty, product category, or custom solution here.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap split">
+        <div class="panel">
+          <h3>Built around your customers.</h3>
+          <p>Replace this section with the client's story: when they started, what they specialize in, and why people choose them.</p>
+          <div class="checks">
+            <div class="check"><b>✓</b><span>Clear, honest communication</span></div>
+            <div class="check"><b>✓</b><span>Quality-focused workmanship</span></div>
+            <div class="check"><b>✓</b><span>Friendly customer support</span></div>
+            <div class="check"><b>✓</b><span>Solutions tailored to your needs</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Need a quick answer?</h3>
+          <p>Make it easy for visitors to take the next step. Add opening hours, service area, or any important information here.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp us</a>
+            <a class="btn secondary" href="tel:+910000000000">Call now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Simple options</h2>
+          <p>Use this area for packages, starting prices, or popular services. Remove the section completely when pricing is not appropriate.</p>
+        </div>
+        <div class="price-grid">
+          <article class="price">
+            <h3>Basic</h3>
+            <div class="amount">₹1,999</div>
+            <p>A simple starting package for customers who need the essentials.</p>
+            <ul><li>Core service</li><li>Standard support</li><li>Basic turnaround</li></ul>
+            <a class="btn secondary" href="#contact">Choose basic</a>
+          </article>
+          <article class="price featured">
+            <div class="badge">Popular</div>
+            <h3>Standard</h3>
+            <div class="amount">₹3,999</div>
+            <p>Best value for most customers who want a complete solution.</p>
+            <ul><li>Everything in Basic</li><li>Priority support</li><li>Extra service option</li></ul>
+            <a class="btn primary" href="#contact">Choose standard</a>
+          </article>
+          <article class="price">
+            <h3>Premium</h3>
+            <div class="amount">₹6,999</div>
+            <p>For customers who need a more complete or customized service.</p>
+            <ul><li>Everything in Standard</li><li>Custom solution</li><li>Priority handling</li></ul>
+            <a class="btn secondary" href="#contact">Choose premium</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact">
+        <div class="contact-card">
+          <h2>Let's talk about what you need.</h2>
+          <p>Replace the details below with the client's real contact information. The buttons are already set up for phone and WhatsApp.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://wa.me/910000000000" target="_blank" rel="noopener">Message on WhatsApp</a>
+            <a class="btn secondary" href="tel:+910000000000">Call +91 00000 00000</a>
+          </div>
+        </div>
+        <div class="contact-list">
+          <div class="contact-item"><small>Business</small><strong>YOUR BUSINESS NAME</strong></div>
+          <div class="contact-item"><small>Location</small><strong>Your City, Tamil Nadu</strong></div>
+          <div class="contact-item"><small>Hours</small><strong>Mon – Sat • 9:00 AM – 7:00 PM</strong></div>
+          <div class="contact-item"><small>Email</small><strong>hello@example.com</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 YOUR BUSINESS NAME. All rights reserved.</div>
+      <div>Website template by Abiramana Web</div>
+    </div>
+  </footer>
+</body>
+</html>
